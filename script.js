@@ -608,3 +608,14 @@ window.openInteractiveResume = function() {
         activeClone = clone;
     });
 };
+
+// ==========================================================================
+// 06. COLLAPSIBLE CERTIFICATIONS (ACCORDION)
+// ==========================================================================
+window.toggleCert = function(element) {
+    // Find the parent item
+    const parentItem = element.closest('.collapsible-item');
+    
+    // Toggle the 'is-open' class to trigger the CSS animation
+    parentItem.classList.toggle('is-open');
+};

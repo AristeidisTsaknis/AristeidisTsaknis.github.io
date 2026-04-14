@@ -410,7 +410,56 @@ h1 {
 .bg-details ul { list-style-type: none; padding: 0; margin: 0; }
 .bg-details li { color: var(--secondary-text); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.8rem; position: relative; }
 .bg-details li::before { content: '>'; position: absolute; left: -1.2rem; color: var(--accent); font-family: monospace; font-weight: bold; }
+/* --- COLLAPSIBLE CERTIFICATIONS --- */
+.collapsible-item {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
 
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.cert-header:hover {
+    opacity: 0.7;
+}
+
+.cert-info {
+    flex: 1;
+}
+
+.cert-arrow {
+    font-size: 0.8rem;
+    color: var(--accent);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-left: 1rem;
+}
+
+/* Hidden state by default */
+.cert-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+}
+
+/* Expanded state */
+.collapsible-item.is-open .cert-body {
+    max-height: 600px; /* Big enough to fit the text */
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+/* Flip the arrow when open */
+.collapsible-item.is-open .cert-arrow {
+    transform: rotate(180deg);
+}
 /* --- 10. CONTACT --- */
 .comms-grid { padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
 .comms-label { font-family: monospace; color: var(--secondary-text); font-size: 0.8rem; letter-spacing: 1px; }
