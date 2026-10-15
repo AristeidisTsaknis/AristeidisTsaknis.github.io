@@ -692,5 +692,11 @@ footer {
         transition-duration: 0.01ms !important;
         transition-delay: 0s !important;
     }
-    .marquee { overflow-x: auto; }
+
+    /* The skills bar is how visitors see every skill, so it keeps scrolling
+       (slowly, and it pauses on hover) even when reduced motion is requested. */
+    .marquee .marquee-content {
+        animation-duration: 60s !important;
+        animation-iteration-count: infinite !important;
+    }
 }
