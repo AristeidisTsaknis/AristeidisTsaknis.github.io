@@ -98,7 +98,9 @@ html.lenis { height: auto; }
 /* --- 04. NAVIGATION & THEME TOGGLE --- */
 .command-nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 1rem 2rem;
     padding: 2rem;
     position: sticky;
     top: 0;
@@ -107,12 +109,15 @@ html.lenis { height: auto; }
     border-bottom: 1px solid var(--border-color);
 }
 
+/* When the nav wraps it gets tall, so it only sticks on wide screens */
+@media (max-width: 1100px) { .command-nav { position: static; } }
+
 .brand-main { font-weight: 900; letter-spacing: -0.5px; font-size: 1.2rem; }
 .brand-sub { font-size: 0.7rem; font-family: monospace; color: var(--secondary-text); margin-top: 0.2rem; }
 
-.nav-controls { display: flex; align-items: center; gap: 2.5rem; }
+.nav-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 1rem 2rem; }
 
-.top-nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.top-nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; }
 
 .top-nav-links a,
 .top-nav-links .nav-link {
