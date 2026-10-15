@@ -37,7 +37,7 @@ window.PROJECT_DATA = {
                             <span class="terminal-dot terminal-dot--red"></span>
                             <span class="terminal-dot terminal-dot--yellow"></span>
                             <span class="terminal-dot terminal-dot--green"></span>
-                            <span class="terminal-title">settings.yaml</span>
+                            <span class="terminal-title">settings.yaml</span><span class="terminal-note">Illustrative output</span>
                         </div>
                         <div class="terminal-body">
                             <span class="t-pink">ingestion:</span><br>
@@ -93,7 +93,7 @@ window.PROJECT_DATA = {
                             <span class="terminal-dot terminal-dot--red"></span>
                             <span class="terminal-dot terminal-dot--yellow"></span>
                             <span class="terminal-dot terminal-dot--green"></span>
-                            <span class="terminal-title">bronze_to_silver_etl.log</span>
+                            <span class="terminal-title">bronze_to_silver_etl.log</span><span class="terminal-note">Illustrative output</span>
                         </div>
                         <div class="terminal-body">
                             <span class="t-muted">$</span> docker compose run --rm airflow-scheduler python -m services.etl.bronze_to_silver<br>
@@ -149,7 +149,7 @@ window.PROJECT_DATA = {
                             <span class="terminal-dot terminal-dot--red"></span>
                             <span class="terminal-dot terminal-dot--yellow"></span>
                             <span class="terminal-dot terminal-dot--green"></span>
-                            <span class="terminal-title">tools/dropzone_watcher.py</span>
+                            <span class="terminal-title">tools/dropzone_watcher.py</span><span class="terminal-note">Illustrative output</span>
                         </div>
                         <div class="terminal-body">
                             <span class="t-muted">$</span> python -m tools.dropzone_watcher<br>
@@ -206,7 +206,7 @@ window.PROJECT_DATA = {
                             <span class="terminal-dot terminal-dot--red"></span>
                             <span class="terminal-dot terminal-dot--yellow"></span>
                             <span class="terminal-dot terminal-dot--green"></span>
-                            <span class="terminal-title">mqtt_broker_stream.log</span>
+                            <span class="terminal-title">mqtt_broker_stream.log</span><span class="terminal-note">Illustrative output</span>
                         </div>
                         <div class="terminal-body">
                             <span class="t-muted">[TOPIC]</span> <span class="t-cyan">tank/telemetry/env</span><br>
@@ -261,7 +261,7 @@ window.PROJECT_DATA = {
                             <span class="terminal-dot terminal-dot--red"></span>
                             <span class="terminal-dot terminal-dot--yellow"></span>
                             <span class="terminal-dot terminal-dot--green"></span>
-                            <span class="terminal-title">test_pipeline.py</span>
+                            <span class="terminal-title">test_pipeline.py</span><span class="terminal-note">Illustrative output</span>
                         </div>
                         <div class="terminal-body">
                             <span class="t-muted">$</span> python test.py<br>
@@ -321,7 +321,7 @@ window.PROJECT_DATA = {
                             <span class="terminal-dot terminal-dot--red"></span>
                             <span class="terminal-dot terminal-dot--yellow"></span>
                             <span class="terminal-dot terminal-dot--green"></span>
-                            <span class="terminal-title">auto_dim_estimation.py</span>
+                            <span class="terminal-title">auto_dim_estimation.py</span><span class="terminal-note">Illustrative output</span>
                         </div>
                         <div class="terminal-body">
                             <span class="t-pink">from</span> dimensionality_reduction <span class="t-pink">import</span> G_MDS<br>
@@ -383,7 +383,7 @@ window.PROJECT_DATA = {
                             <span class="terminal-dot terminal-dot--red"></span>
                             <span class="terminal-dot terminal-dot--yellow"></span>
                             <span class="terminal-dot terminal-dot--green"></span>
-                            <span class="terminal-title">train_asd_classifier.py</span>
+                            <span class="terminal-title">train_asd_classifier.py</span><span class="terminal-note">Illustrative output</span>
                         </div>
                         <div class="terminal-body">
                             <span class="t-muted">$</span> python train_asd_classifier.py<br>
