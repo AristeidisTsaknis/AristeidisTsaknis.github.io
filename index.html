@@ -3,219 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Aristeidis Tsaknis | Data & AI Engineer</title>
-    <meta name="title" content="Aristeidis Tsaknis | Data & AI Engineer">
     <meta name="description" content="Portfolio of Aristeidis Tsaknis. Bridging the gap from bare metal to machine learning with scalable data pipelines, embedded systems, and AI research.">
     <meta name="author" content="Aristeidis Tsaknis">
-    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#050505">
+    <link rel="canonical" href="https://aristeidistsaknis.github.io/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aristeidis Tsaknis">
     <meta property="og:url" content="https://aristeidistsaknis.github.io/">
     <meta property="og:title" content="Aristeidis Tsaknis | Data & AI Engineer">
     <meta property="og:description" content="Portfolio of Aristeidis Tsaknis. Bridging the gap from bare metal to machine learning with scalable data pipelines, embedded systems, and AI research.">
     <meta property="og:image" content="https://aristeidistsaknis.github.io/web_preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Preview of the Aristeidis Tsaknis portfolio website">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://aristeidistsaknis.github.io/">
-    <meta property="twitter:title" content="Aristeidis Tsaknis | Data & AI Engineer">
-    <meta property="twitter:description" content="Portfolio of Aristeidis Tsaknis. Bridging the gap from bare metal to machine learning with scalable data pipelines, embedded systems, and AI research.">
-    <meta property="twitter:image" content="https://aristeidistsaknis.github.io/web_preview.png">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://aristeidistsaknis.github.io/">
+    <meta name="twitter:title" content="Aristeidis Tsaknis | Data & AI Engineer">
+    <meta name="twitter:description" content="Portfolio of Aristeidis Tsaknis. Bridging the gap from bare metal to machine learning with scalable data pipelines, embedded systems, and AI research.">
+    <meta name="twitter:image" content="https://aristeidistsaknis.github.io/web_preview.png">
 
-    <link rel="stylesheet" href="style.css?v=1.1">
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
-    <style>
-        /* ==========================================================================
-           COMPONENT OVERRIDES & MOBILE RESPONSIVENESS
-           ========================================================================== */
-           
-        /* 1. Pause marquee perfectly on hover without jumping */
-        .marquee:hover .marquee-content,
-        .marquee:hover .stat-item {
-            animation-play-state: paused;
-        }
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aristeidis Tsaknis",
+        "jobTitle": "Data & AI Engineer",
+        "url": "https://aristeidistsaknis.github.io/",
+        "image": "https://aristeidistsaknis.github.io/images/profile.jpg",
+        "address": { "@type": "PostalAddress", "addressLocality": "Thessaloniki", "addressCountry": "GR" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Western Macedonia" },
+        "sameAs": [
+            "https://www.linkedin.com/in/aristeidis-tsaknis/",
+            "https://github.com/AristeidisTsaknis"
+        ]
+    }
+    </script>
 
-        /* 2. Sleek Navbar Link Styles (Desktop) */
-        .top-nav-links {
-            display: flex; 
-            gap: 2rem; 
-            align-items: center;
-        }
-        .top-nav-links a {
-            color: var(--text-color);
-            font-family: monospace;
-            text-decoration: none;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s, background 0.3s, border-color 0.3s;
-        }
-        .top-nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        /* Profile Button (Default/Dark Mode) */
-        .top-nav-links .highlight-link {
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 6px 16px;
-            border-radius: 4px;
-        }
-        .top-nav-links .highlight-link:hover {
-            background: var(--accent);
-            color: var(--bg-color);
-        }
+    <!-- Apply the saved theme before first paint (prevents a dark/light flash) -->
+    <script>
+        (function () {
+            var theme = 'dark';
+            try { theme = localStorage.getItem('theme') || theme; } catch (e) {}
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 
-        /* Profile Button (Light Mode Override - Sleek Blue) */
-        html[data-theme='light'] .top-nav-links .highlight-link {
-            color: #0056b3; 
-            border-color: #0056b3;
-        }
-        html[data-theme='light'] .top-nav-links .highlight-link:hover {
-            background: #0056b3;
-            color: #ffffff;
-        }
+    <link rel="stylesheet" href="css/style.css?v=2.0">
 
-        /* 3. Sync Expanded Popup (Interior & Close Button) to Blue in Light Mode */
-        html[data-theme='light'] .is-expanded,
-        html[data-theme='light'] .is-cloned {
-            --accent: #0056b3 !important;
-            --card-accent: #0056b3 !important;
-        }
-
-        /* 4. Download Button Hover Fix */
-        .download-btn:hover {
-            background-color: var(--text-color) !important;
-            color: var(--bg-color) !important;
-            cursor: pointer;
-        }
-        
-        /* Adjust Nav Controls */
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
-        
-        /* ==========================================================================
-           MOBILE RESPONSIVENESS RULES (PHONES & TABLETS)
-           ========================================================================== */
-        @media (max-width: 768px) {
-            
-            /* HEADER & NAVBAR MOBILE FIX */
-            .command-nav {
-                flex-direction: column !important;
-                align-items: center !important;
-                text-align: center !important;
-                gap: 1.5rem !important;
-                padding: 1.5rem !important;
-            }
-            .brand-block {
-                margin-right: 0 !important;
-            }
-            .brand-main { font-size: 1.8rem !important; }
-            .brand-sub { font-size: 0.8rem !important; margin-top: 0.4rem !important; }
-            
-            .nav-controls {
-                width: 100% !important;
-                flex-direction: column !important;
-                justify-content: center !important;
-                gap: 1.5rem !important;
-            }
-            
-            .top-nav-links { 
-                gap: 1.2rem !important; 
-                flex-wrap: wrap !important;
-                justify-content: center !important;
-                width: 100% !important;
-            }
-            .top-nav-links a { 
-                display: inline-block !important; 
-                font-size: 0.85rem !important; 
-            }
-            .top-nav-links .highlight-link {
-                padding: 6px 12px !important;
-            }
-            
-            /* HERO SECTION MOBILE FIX */
-            .hero { padding: 4rem 1.5rem !important; text-align: center !important; }
-            .hero h1 { font-size: 2.8rem !important; line-height: 1.2 !important; }
-            .hero .mute { display: block !important; font-size: 1.4rem !important; margin-top: 1rem !important; line-height: 1.4 !important; }
-
-            /* EXPANDED PROJECT CARDS (MOBILE FIX) */
-            .project-card.is-expanded {
-                padding: 4.5rem 1.5rem 2rem 1.5rem !important;
-            }
-            .project-card.is-expanded h3 {
-                font-size: 1.6rem !important; 
-                line-height: 1.3 !important;
-                margin-bottom: 1rem !important;
-                white-space: normal !important; 
-            }
-            .project-card.is-expanded .tag {
-                font-size: 0.75rem !important;
-                white-space: normal !important; 
-                line-height: 1.4 !important;
-                margin-bottom: 1rem !important;
-                display: inline-block !important;
-            }
-            .project-card.is-expanded .desc {
-                font-size: 1rem !important;
-                line-height: 1.6 !important;
-                margin-bottom: 2rem !important;
-            }
-            .project-card.is-expanded .metrics-grid {
-                grid-template-columns: 1fr !important;
-                gap: 1rem !important;
-            }
-            .close-btn-float {
-                top: 15px !important;
-                right: 15px !important;
-                font-size: 0.8rem !important;
-                padding: 8px 16px !important;
-            }
-
-            /* PROFILE "BEYOND THE CODE" MOBILE GRID FIX */
-            .expanded-content { padding: 1rem !important; } 
-            .resume-header { gap: 1.5rem !important; padding-bottom: 1.5rem !important; margin-bottom: 1.5rem !important; justify-content: center; text-align: center; }
-            .resume-header .profile-img { width: 180px !important; height: 180px !important; margin: 0 auto !important; }
-            .resume-header h2 { font-size: 2.2rem !important; }
-            .resume-header > div:last-child { min-width: 100% !important; text-align: center; }
-            
-            .resume-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; margin-bottom: 1.5rem !important; }
-            .resume-card { padding: 1.5rem !important; }
-            
-            .idol-item { flex-direction: column !important; text-align: center; gap: 1rem !important; }
-            .idol-img { width: 120px !important; height: 120px !important; margin: 0 auto; }
-            .mentor-img { width: 200px !important; height: 200px !important; margin-bottom: 1.5rem !important; }
-            .escapes-img { height: 200px !important; margin-bottom: 1.5rem !important; }
-            .truth-box { padding: 1.5rem !important; }
-        }
-    </style>
+    <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js" integrity="sha384-KZetIXtrdbXstGhLNEbeSTfjZCr0QrioGU9dJl486Zr69ewuEbtdUsrqTIkGOPgl" crossorigin="anonymous"></script>
+    <script defer src="js/projects.js?v=2.0"></script>
+    <script defer src="js/main.js?v=2.0"></script>
 </head>
+
 <body>
 
-    <nav class="command-nav">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="command-nav">
         <div class="brand-block">
             <div class="brand-main">ARISTEIDIS TSAKNIS</div>
-            <div class="brand-sub">AI/Data Engineer | Thessaloniki, Greece</div>
+            <div class="brand-sub">Data & AI Engineer | Thessaloniki, Greece</div>
         </div>
-        
+
         <div class="nav-controls">
-            <div class="top-nav-links">
-                <a href="https://www.linkedin.com/in/aristeidis-tsaknis/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/AristeidisTsaknis" target="_blank">GitHub</a>
-                <a href="#" onclick="event.preventDefault(); openInteractiveResume();" class="highlight-link">Profile</a>
-                <a href="AristeidisTsaknis-DE.pdf" download style="color: var(--secondary-text);">Resume [↓]</a>
-            </div>
-            
-            <button id="theme-btn" class="industrial-toggle">
+            <nav class="top-nav-links" aria-label="Primary">
+                <a href="#work">Projects</a>
+                <a href="#experience">Background</a>
+                <a href="#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/aristeidis-tsaknis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/AristeidisTsaknis" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <button type="button" class="nav-link highlight-link" data-open-profile aria-haspopup="dialog">Profile</button>
+                <a href="AristeidisTsaknis-DE.pdf" download class="nav-link-muted">Resume [↓]</a>
+            </nav>
+
+            <button id="theme-btn" class="industrial-toggle" type="button" aria-label="Dark mode" aria-pressed="true">
                 <span class="mode-label">THEME</span>
-                <div class="toggle-track"><div class="toggle-knob"></div></div>
+                <span class="toggle-track"><span class="toggle-knob"></span></span>
             </button>
         </div>
-    </nav>
+    </header>
 
-    <main>
+    <main id="main">
         <section class="hero">
             <h1>
                 Driven by Detail. Built for Scale.
@@ -224,37 +102,40 @@
         </section>
 
         <section id="arsenal">
-            <div class="marquee">
+            <div class="marquee" role="region" aria-label="Technical skills">
                 <div class="marquee-content">
-                    <div class="stat-item"><span>LANGUAGES</span><strong>Python / C++ / SQL</strong></div>
-                    <div class="stat-item"><span>DATA INFRA</span><strong>Airflow / Docker / ETL / Kafka</strong></div>
-                    <div class="stat-item"><span>DATABASES</span><strong>PostgreSQL / ClickHouse / MongoDB</strong></div>
-                    <div class="stat-item"><span>CLOUD & STORAGE</span><strong>AWS / MinIO / S3</strong></div>
-                    <div class="stat-item"><span>ML & AI</span><strong>Scikit-Learn / PyTorch / Hugging Face</strong></div>
-                    <div class="stat-item"><span>IOT & EDGE</span><strong>ESP8266 / MQTT / TCP / Linux</strong></div>
-                    <div class="stat-item"><span>LIBRARIES</span><strong>BeautifulSoup / SQLAlchemy / Pandas</strong></div>
-                    <div class="stat-item"><span>BI & APPS</span><strong>Streamlit / FastAPI / Flask</strong></div>
-                    
-                    <div class="stat-item"><span>LANGUAGES</span><strong>Python / C++ / SQL</strong></div>
-                    <div class="stat-item"><span>DATA INFRA</span><strong>Airflow / Docker / ETL / Kafka</strong></div>
-                    <div class="stat-item"><span>DATABASES</span><strong>PostgreSQL / ClickHouse / MongoDB</strong></div>
-                    <div class="stat-item"><span>CLOUD & STORAGE</span><strong>AWS / MinIO / S3</strong></div>
-                    <div class="stat-item"><span>ML & AI</span><strong>Scikit-Learn / PyTorch / Hugging Face</strong></div>
-                    <div class="stat-item"><span>IOT & EDGE</span><strong>ESP8266 / MQTT / TCP / Linux</strong></div>
-                    <div class="stat-item"><span>LIBRARIES</span><strong>BeautifulSoup / SQLAlchemy / Pandas</strong></div>
-                    <div class="stat-item"><span>BI & APPS</span><strong>Streamlit / FastAPI / Flask</strong></div>
+                    <div class="marquee-group">
+                        <div class="stat-item"><span>LANGUAGES</span><strong>Python / C++ / SQL</strong></div>
+                        <div class="stat-item"><span>DATA INFRA</span><strong>Airflow / Docker / ETL / Kafka</strong></div>
+                        <div class="stat-item"><span>DATABASES</span><strong>PostgreSQL / ClickHouse / MongoDB</strong></div>
+                        <div class="stat-item"><span>CLOUD & STORAGE</span><strong>AWS / MinIO / S3</strong></div>
+                        <div class="stat-item"><span>ML & AI</span><strong>Scikit-Learn / PyTorch / Hugging Face</strong></div>
+                        <div class="stat-item"><span>IOT & EDGE</span><strong>ESP8266 / MQTT / TCP / Linux</strong></div>
+                        <div class="stat-item"><span>LIBRARIES</span><strong>BeautifulSoup / SQLAlchemy / Pandas</strong></div>
+                        <div class="stat-item"><span>BI & APPS</span><strong>Streamlit / FastAPI / Flask</strong></div>
+                    </div>
+                    <div class="marquee-group" aria-hidden="true">
+                        <div class="stat-item"><span>LANGUAGES</span><strong>Python / C++ / SQL</strong></div>
+                        <div class="stat-item"><span>DATA INFRA</span><strong>Airflow / Docker / ETL / Kafka</strong></div>
+                        <div class="stat-item"><span>DATABASES</span><strong>PostgreSQL / ClickHouse / MongoDB</strong></div>
+                        <div class="stat-item"><span>CLOUD & STORAGE</span><strong>AWS / MinIO / S3</strong></div>
+                        <div class="stat-item"><span>ML & AI</span><strong>Scikit-Learn / PyTorch / Hugging Face</strong></div>
+                        <div class="stat-item"><span>IOT & EDGE</span><strong>ESP8266 / MQTT / TCP / Linux</strong></div>
+                        <div class="stat-item"><span>LIBRARIES</span><strong>BeautifulSoup / SQLAlchemy / Pandas</strong></div>
+                        <div class="stat-item"><span>BI & APPS</span><strong>Streamlit / FastAPI / Flask</strong></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="work">
-            <h2 class="label">PROJECT EXPERIENCE</h2>
+        <section id="work" aria-labelledby="work-title">
+            <h2 class="label" id="work-title">PROJECT EXPERIENCE</h2>
             <div class="project-grid">
                 
-                <article class="card project-card" onclick="expandProject('smart-home-iot')">
+                <article class="card project-card" data-project="smart-home-iot">
                     <div class="card-inner">
                         <span class="tag">01 / Data Engineering | Airflow | Postgres | MongoDB</span>
-                        <h3>Smart Home Energy Data Platform</h3>
+                        <h3><button type="button" class="card-trigger" aria-haspopup="dialog">Smart Home Energy Data Platform</button></h3>
                         <p class="desc">End-to-end IoT data pipeline with real-time analytics and Airflow-orchestrated ETLs.</p>
                         <div class="metrics-grid">
                             <div class="m-item"><strong>Airflow & Docker</strong><span>ORCHESTRATION</span></div>
@@ -264,10 +145,10 @@
                     <div class="visual gradient-d"></div> 
                 </article>
 
-                <article class="card project-card" onclick="expandProject('iot-pipeline')">
+                <article class="card project-card" data-project="iot-pipeline">
                     <div class="card-inner">
                         <span class="tag">02 / Data Engineering | MQTT | YAML | Python</span>
-                        <h3>Modular IoT Real-Time Data Pipeline</h3>
+                        <h3><button type="button" class="card-trigger" aria-haspopup="dialog">Modular IoT Real-Time Data Pipeline</button></h3>
                         <p class="desc">Production-style streaming and batch ETL with schema validation and dead-letter handling.</p>
                         <div class="metrics-grid">
                             <div class="m-item"><strong>MQTT & HTTP</strong><span>INGESTION</span></div>
@@ -277,10 +158,10 @@
                     <div class="visual gradient-b"></div> 
                 </article>
 
-                <article class="card project-card" onclick="expandProject('nutrition-pipeline')">
+                <article class="card project-card" data-project="nutrition-pipeline">
                     <div class="card-inner">
                         <span class="tag">03 / Data Pipelines | ClickHouse | MinIO | Event-Driven</span>
-                        <h3>Smart Nutrition & Wellness Platform</h3>
+                        <h3><button type="button" class="card-trigger" aria-haspopup="dialog">Smart Nutrition & Wellness Data Platform</button></h3>
                         <p class="desc">Automated multimodal ingestion pipeline built on a strict Bronze/Silver/Gold architecture.</p>
                         <div class="metrics-grid">
                             <div class="m-item"><strong>ClickHouse</strong><span>OLAP ENGINE</span></div>
@@ -290,10 +171,10 @@
                     <div class="visual gradient-c"></div>
                 </article>
 
-                <article class="card project-card" onclick="expandProject('fish-feeder')">
+                <article class="card project-card" data-project="fish-feeder">
                     <div class="card-inner">
                         <span class="tag">04 / Embedded | ESP8266 | C++ | Flask | PostgreSQL</span>
-                        <h3>IoT Smart Fish Feeder</h3>
+                        <h3><button type="button" class="card-trigger" aria-haspopup="dialog">IoT Smart Fish Feeder</button></h3>
                         <p class="desc">Automated hardware/software system with physical sensors, MQTT bridge, and live web dashboard.</p>
                         <div class="metrics-grid">
                             <div class="m-item"><strong>C++ & ESP8266</strong><span>EDGE DEVICE</span></div>
@@ -303,10 +184,10 @@
                     <div class="visual gradient-a"></div>
                 </article>
 
-                <article class="card project-card" onclick="expandProject('stock-scraper')">
+                <article class="card project-card" data-project="stock-scraper">
                     <div class="card-inner">
                         <span class="tag">05 / Data Engineering | Airflow | PostgreSQL | BeautifulSoup</span>
-                        <h3>Stock Market ETL & Orchestration</h3>
+                        <h3><button type="button" class="card-trigger" aria-haspopup="dialog">Stock Market ETL & Orchestration</button></h3>
                         <p class="desc">Automated web scraping, processing, and database ingestion pipeline for financial market data.</p>
                         <div class="metrics-grid">
                             <div class="m-item"><strong>Airflow</strong><span>DAG ORCHESTRATION</span></div>
@@ -316,10 +197,10 @@
                     <div class="visual gradient-d"></div> 
                 </article>
 
-                <article class="card project-card" onclick="expandProject('dim-reduction')">
+                <article class="card project-card" data-project="dim-reduction">
                     <div class="card-inner">
                         <span class="tag">06 / Machine Learning | Python | Scikit-Learn | Math</span>
-                        <h3>Dimensionality Reduction Library</h3>
+                        <h3><button type="button" class="card-trigger" aria-haspopup="dialog">Dimensionality Reduction Library</button></h3>
                         <p class="desc">Engineered a Python package implementing 15 DR/FS methods with automated elbow estimation.</p>
                         <div class="metrics-grid">
                             <div class="m-item"><strong>15 Methods</strong><span>IMPLEMENTED</span></div>
@@ -329,10 +210,10 @@
                     <div class="visual gradient-b"></div>
                 </article>
 
-                <article class="card project-card" onclick="expandProject('asd-ml-research')">
+                <article class="card project-card" data-project="asd-ml-research">
                     <div class="card-inner">
                         <span class="tag">07 / Machine Learning | Computer Vision | Python</span>
-                        <h3>ASD Facial Classification Models</h3>
+                        <h3><button type="button" class="card-trigger" aria-haspopup="dialog">ASD Facial Classification Models</button></h3>
                         <p class="desc">Published academic research utilizing Gradient Boosting and robust image augmentation techniques.</p>
                         <div class="metrics-grid">
                             <div class="m-item"><strong>Ensemble</strong><span>ML MODELING</span></div>
@@ -342,29 +223,40 @@
                     <div class="visual gradient-c"></div> 
                 </article>
 
-                <article class="card project-card" onclick="window.open('https://github.com/AristeidisTsaknis', '_blank')" style="background: var(--card-bg);">
-                    <div class="card-inner" style="align-items: center; justify-content: center; text-align: center; padding-right: 0;">
-                        <h3 style="font-size: 2rem; margin-bottom: 1rem;">View Full Archive</h3>
-                        <p class="desc" style="margin-bottom: 0;">Explore all my repositories, experimental code, and open-source contributions on GitHub.</p>
-                        
-                        <div style="margin-top: 2rem; padding: 12px 24px; border: 1px solid var(--text-color); font-family: monospace; font-size: 0.8rem; display: inline-block; transition: all 0.3s;">
-                            OPEN GITHUB ↗
-                        </div>
+                <a class="card project-card archive-card" href="https://github.com/AristeidisTsaknis" target="_blank" rel="noopener noreferrer">
+                    <div class="card-inner">
+                        <h3>View Full Archive</h3>
+                        <p class="desc">Explore all my repositories, experimental code, and open-source contributions on GitHub.</p>
+                        <span class="archive-cta">OPEN GITHUB ↗</span>
                     </div>
-                </article>
+                </a>
 
             </div>
         </section>
 
-        <section id="experience">
-            <h2 class="label">BACKGROUND</h2>
+        <section id="experience" aria-labelledby="experience-title">
+            <h2 class="label" id="experience-title">BACKGROUND</h2>
             
             <div class="background-grid">
                 
                 <div class="bg-column">
                     <h3>Work Experience</h3>
                     <div class="bg-item">
-                        <div class="bg-time">JAN 2026 — NOW</div>
+                        <div class="bg-time">JUL 2026 — NOW</div>
+                        <div class="bg-title">Statistical Data Scientist</div>
+                        <div class="bg-org">Pfizer</div>
+                        <div class="bg-details">
+                            <ul>
+                                <li>Performing pharmacokinetic and pharmacodynamic (PK/PD) data analysis within a regulated clinical environment.</li>
+                                <li>Continuing to lead data anonymization work, protecting sensitive patient information in line with regulatory requirements.</li>
+                                <li>Improving team efficiency by automating routine processes with AI.</li>
+                                <li>Building an internal, fully modular library for quality-control (QC) comparisons between the lead programmer's and the QC programmer's outputs.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-item">
+                        <div class="bg-time">JAN 2026 — JUN 2026</div>
                         <div class="bg-title">Assistant Statistical Data Scientist</div>
                         <div class="bg-org">Pfizer</div>
                         <div class="bg-details">
@@ -378,7 +270,7 @@
                     </div>
                     
                     <div class="bg-item">
-                        <div class="bg-time">JUL — OCT 2023</div>
+                        <div class="bg-time">JUL 2023 — OCT 2023</div>
                         <div class="bg-title">Embedded Systems Software Developer (Intern)</div>
                         <div class="bg-org">Infoscope Hellas</div>
                         <div class="bg-details">
@@ -395,129 +287,157 @@
                         <div class="bg-org">Chalkidiki, Greece</div>
                         <div class="bg-details">
                             <ul>
-                                <li><strong style="color: var(--text-color);">Growth & Teamwork:</strong> Started as a seasonal waiter and earned the trust to serve as Head Waiter for my final 4 seasons. I learned exactly how to keep the kitchen and the floor communicating smoothly during peak tourist rushes.</li>
-                                <li><strong style="color: var(--text-color);">Grace Under Pressure:</strong> Serving in a high-volume environment taught me how to stay calm, think on my feet, and solve problems with a smile when things get chaotic (essentially, my first experience with real-time "incident management").</li>
-                                <li><strong style="color: var(--text-color);">Consistency & Grit:</strong> Working 8 consecutive, physically demanding summers built my stamina and taught me the simple value of showing up, working hard, and being someone my team could rely on.</li>
+                                <li><strong>Growth & Teamwork:</strong> Started as a seasonal waiter and earned the trust to serve as Head Waiter for my final 4 seasons. I learned exactly how to keep the kitchen and the floor communicating smoothly during peak tourist rushes.</li>
+                                <li><strong>Grace Under Pressure:</strong> Serving in a high-volume environment taught me how to stay calm, think on my feet, and solve problems with a smile when things get chaotic (essentially, my first experience with real-time "incident management").</li>
+                                <li><strong>Consistency & Grit:</strong> Working 9 consecutive, physically demanding summers built my stamina and taught me the simple value of showing up, working hard, and being someone my team could rely on.</li>
                             </ul>
                         </div>
                     </div>
 
-                    <h3 style="margin-top: 4rem;">Certifications</h3>
+                    <h3 class="cert-heading">Certifications</h3>
                     
                     <div class="bg-item collapsible-item">
-                        <div class="cert-header" onclick="toggleCert(this)">
-                            <div class="cert-info">
-                                <div class="bg-time">MAY 2026</div>
-                                <div class="bg-title">Cloud DevOps using Microsoft Azure</div>
-                                <div class="bg-org">Udacity</div>
-                            </div>
-                            <div class="cert-arrow">▼</div>
-                        </div>
-                        <div class="bg-details cert-body">
+                        <button type="button" class="cert-header" aria-expanded="false" aria-controls="cert-1">
+                            <span class="cert-info">
+                                <span class="bg-time">MAY 2026</span>
+                                <span class="bg-title">Cloud DevOps using Microsoft Azure</span>
+                                <span class="bg-org">Udacity</span>
+                            </span>
+                            <span class="cert-arrow" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="cert-body" id="cert-1">
+                            <div class="cert-body-inner">
+                                <div class="bg-details">
                             <ul>
-                                <li><strong style="color: var(--text-color);">Infrastructure as Code (IaC):</strong> Engineered and provisioned scalable, secure cloud environments on Azure utilizing automated provisioning tools and configuration management.</li>
-                                <li><strong style="color: var(--text-color);">CI/CD & Automation:</strong> Designed and implemented robust continuous integration and continuous delivery (CI/CD) deployment pipelines via Azure DevOps.</li>
+                                <li><strong>Infrastructure as Code (IaC):</strong> Engineered and provisioned scalable, secure cloud environments on Azure utilizing automated provisioning tools and configuration management.</li>
+                                <li><strong>CI/CD & Automation:</strong> Designed and implemented robust continuous integration and continuous delivery (CI/CD) deployment pipelines via Azure DevOps.</li>
                             </ul>
                         </div>
-                    </div>
-                    
-                    <div class="bg-item collapsible-item">
-                        <div class="cert-header" onclick="toggleCert(this)">
-                            <div class="cert-info">
-                                <div class="bg-time">MAR 2026</div>
-                                <div class="bg-title">Data Engineering with Microsoft Azure</div>
-                                <div class="bg-org">Udacity / Accenture</div>
                             </div>
-                            <div class="cert-arrow">▼</div>
-                        </div>
-                        <div class="bg-details cert-body">
-                            <ul>
-                                <li><strong style="color: var(--text-color);">Cloud Data Warehousing & Lakehouses:</strong> Designed scalable data architectures using Azure Synapse Analytics and Azure Databricks to implement Lakehouse solutions. Engineered relational and NoSQL data models utilizing PostgreSQL and Apache Cassandra.</li>
-                                <li><strong style="color: var(--text-color);">Data Integration & Pipeline Orchestration:</strong> Developed automated ELT/ETL data pipelines with Azure Data Factory to ensure data quality and optimize analytical workloads. Utilized Apache Spark for large-scale data wrangling and implemented infrastructure as code.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-item collapsible-item">
-                        <div class="cert-header" onclick="toggleCert(this)">
-                            <div class="cert-info">
-                                <div class="bg-time">JAN 2026</div>
-                                <div class="bg-title">Mastering Azure Databricks for Data Eng.</div>
-                                <div class="bg-org">Packt / Coursera</div>
-                            </div>
-                            <div class="cert-arrow">▼</div>
-                        </div>
-                        <div class="bg-details cert-body">
-                            <ul>
-                                <li><strong style="color: var(--text-color);">Lakehouse Architecture:</strong> Architected scalable ETL pipelines and managed data integration using Apache Spark and Delta Live Tables.</li>
-                                <li><strong style="color: var(--text-color);">Advanced Data Management & CI/CD:</strong> Implemented Delta Table optimization (time travel, schema validation) and automated workflows utilizing Databricks Repos, CLI, and APIs.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-item collapsible-item">
-                        <div class="cert-header" onclick="toggleCert(this)">
-                            <div class="cert-info">
-                                <div class="bg-time">JAN 2026</div>
-                                <div class="bg-title">Google Cloud Essentials</div>
-                                <div class="bg-org">Pearson / Google Cloud</div>
-                            </div>
-                            <div class="cert-arrow">▼</div>
-                        </div>
-                        <div class="bg-details cert-body">
-                            <ul>
-                                <li><strong style="color: var(--text-color);">Cloud Infrastructure & Serverless:</strong> Deployed scalable virtual machines, orchestrated containerized workloads (Kubernetes), and engineered event-driven serverless architectures utilizing Google Cloud Functions.</li>
-                                <li><strong style="color: var(--text-color);">Data Warehousing & Security:</strong> Managed relational databases via Cloud SQL, executed big data analytics using BigQuery, and secured cloud environments through strict IAM roles and firewall configurations.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-item collapsible-item">
-                        <div class="cert-header" onclick="toggleCert(this)">
-                            <div class="cert-info">
-                                <div class="bg-time">DEC 2025</div>
-                                <div class="bg-title">Machine Learning Specialization</div>
-                                <div class="bg-org">Stanford University / DeepLearning.AI</div>
-                            </div>
-                            <div class="cert-arrow">▼</div>
-                        </div>
-                        <div class="bg-details cert-body">
-                            <ul>
-                                <li><strong style="color: var(--text-color);">Predictive Modeling & Deep Learning:</strong> Developed robust supervised models (regression, tree ensembles) using Scikit-Learn and trained deep neural networks via TensorFlow for complex multi-class classification.</li>
-                                <li><strong style="color: var(--text-color);">Advanced Algorithms & Systems:</strong> Implemented unsupervised learning pipelines for clustering and anomaly detection, and built collaborative-filtering recommender systems alongside deep reinforcement learning models.</li>
-                            </ul>
                         </div>
                     </div>
                     
                     <div class="bg-item collapsible-item">
-                        <div class="cert-header" onclick="toggleCert(this)">
-                            <div class="cert-info">
-                                <div class="bg-time">NOV 2025</div>
-                                <div class="bg-title">IBM Data Engineering Certificate</div>
-                                <div class="bg-org">IBM / Coursera</div>
-                            </div>
-                            <div class="cert-arrow">▼</div>
+                        <button type="button" class="cert-header" aria-expanded="false" aria-controls="cert-2">
+                            <span class="cert-info">
+                                <span class="bg-time">MAR 2026</span>
+                                <span class="bg-title">Data Engineering with Microsoft Azure</span>
+                                <span class="bg-org">Udacity / Accenture</span>
+                            </span>
+                            <span class="cert-arrow" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="cert-body" id="cert-2">
+                            <div class="cert-body-inner">
+                                <div class="bg-details">
+                            <ul>
+                                <li><strong>Cloud Data Warehousing & Lakehouses:</strong> Designed scalable data architectures using Azure Synapse Analytics and Azure Databricks to implement Lakehouse solutions. Engineered relational and NoSQL data models utilizing PostgreSQL and Apache Cassandra.</li>
+                                <li><strong>Data Integration & Pipeline Orchestration:</strong> Developed automated ELT/ETL data pipelines with Azure Data Factory to ensure data quality and optimize analytical workloads. Utilized Apache Spark for large-scale data wrangling and implemented infrastructure as code.</li>
+                            </ul>
                         </div>
-                        <div class="bg-details cert-body">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-item collapsible-item">
+                        <button type="button" class="cert-header" aria-expanded="false" aria-controls="cert-3">
+                            <span class="cert-info">
+                                <span class="bg-time">JAN 2026</span>
+                                <span class="bg-title">Mastering Azure Databricks for Data Eng.</span>
+                                <span class="bg-org">Packt / Coursera</span>
+                            </span>
+                            <span class="cert-arrow" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="cert-body" id="cert-3">
+                            <div class="cert-body-inner">
+                                <div class="bg-details">
+                            <ul>
+                                <li><strong>Lakehouse Architecture:</strong> Architected scalable ETL pipelines and managed data integration using Apache Spark and Delta Live Tables.</li>
+                                <li><strong>Advanced Data Management & CI/CD:</strong> Implemented Delta Table optimization (time travel, schema validation) and automated workflows utilizing Databricks Repos, CLI, and APIs.</li>
+                            </ul>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-item collapsible-item">
+                        <button type="button" class="cert-header" aria-expanded="false" aria-controls="cert-4">
+                            <span class="cert-info">
+                                <span class="bg-time">JAN 2026</span>
+                                <span class="bg-title">Google Cloud Essentials</span>
+                                <span class="bg-org">Pearson / Google Cloud</span>
+                            </span>
+                            <span class="cert-arrow" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="cert-body" id="cert-4">
+                            <div class="cert-body-inner">
+                                <div class="bg-details">
+                            <ul>
+                                <li><strong>Cloud Infrastructure & Serverless:</strong> Deployed scalable virtual machines, orchestrated containerized workloads (Kubernetes), and engineered event-driven serverless architectures utilizing Google Cloud Functions.</li>
+                                <li><strong>Data Warehousing & Security:</strong> Managed relational databases via Cloud SQL, executed big data analytics using BigQuery, and secured cloud environments through strict IAM roles and firewall configurations.</li>
+                            </ul>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-item collapsible-item">
+                        <button type="button" class="cert-header" aria-expanded="false" aria-controls="cert-5">
+                            <span class="cert-info">
+                                <span class="bg-time">DEC 2025</span>
+                                <span class="bg-title">Machine Learning Specialization</span>
+                                <span class="bg-org">Stanford University / DeepLearning.AI</span>
+                            </span>
+                            <span class="cert-arrow" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="cert-body" id="cert-5">
+                            <div class="cert-body-inner">
+                                <div class="bg-details">
+                            <ul>
+                                <li><strong>Predictive Modeling & Deep Learning:</strong> Developed robust supervised models (regression, tree ensembles) using Scikit-Learn and trained deep neural networks via TensorFlow for complex multi-class classification.</li>
+                                <li><strong>Advanced Algorithms & Systems:</strong> Implemented unsupervised learning pipelines for clustering and anomaly detection, and built collaborative-filtering recommender systems alongside deep reinforcement learning models.</li>
+                            </ul>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-item collapsible-item">
+                        <button type="button" class="cert-header" aria-expanded="false" aria-controls="cert-6">
+                            <span class="cert-info">
+                                <span class="bg-time">NOV 2025</span>
+                                <span class="bg-title">IBM Data Engineering Certificate</span>
+                                <span class="bg-org">IBM / Coursera</span>
+                            </span>
+                            <span class="cert-arrow" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="cert-body" id="cert-6">
+                            <div class="cert-body-inner">
+                                <div class="bg-details">
                             <ul>
                                 <li>Practical experience with relational & NoSQL databases, Big Data (Hadoop, Spark), and end-to-end ETL pipelines using Python and Airflow.</li>
                             </ul>
                         </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="bg-item collapsible-item">
-                        <div class="cert-header" onclick="toggleCert(this)">
-                            <div class="cert-info">
-                                <div class="bg-time">OCT 2025</div>
-                                <div class="bg-title">Data Engineering Professional Certificate</div>
-                                <div class="bg-org">DeepLearning.AI / Coursera</div>
-                            </div>
-                            <div class="cert-arrow">▼</div>
-                        </div>
-                        <div class="bg-details cert-body">
+                        <button type="button" class="cert-header" aria-expanded="false" aria-controls="cert-7">
+                            <span class="cert-info">
+                                <span class="bg-time">OCT 2025</span>
+                                <span class="bg-title">Data Engineering Professional Certificate</span>
+                                <span class="bg-org">DeepLearning.AI / Coursera</span>
+                            </span>
+                            <span class="cert-arrow" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="cert-body" id="cert-7">
+                            <div class="cert-body-inner">
+                                <div class="bg-details">
                             <ul>
                                 <li>Comprehensive training in data lakehouse architecture, AWS-based data pipelines, ETL/ELT orchestration, and streaming vs. batch processing.</li>
                             </ul>
+                        </div>
+                            </div>
                         </div>
                     </div>
                     </div>
@@ -540,8 +460,8 @@
             </div>
         </section>
 
-        <section id="contact">
-            <h2 class="label">INITIATE CONTACT</h2>
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 class="label" id="contact-title">INITIATE CONTACT</h2>
             
             <div class="comms-grid">
                 <a href="mailto:aristidistsaknis@gmail.com" class="comms-card span-full email-card">
@@ -551,89 +471,85 @@
                     </div>
                     <div class="comms-main">
                         <h3 class="email-text">aristidistsaknis@gmail.com</h3>
-                        <span class="action-text">> CLICK_TO_SEND_MESSAGE</span>
+                        <span class="action-text">&gt; CLICK_TO_SEND_MESSAGE</span>
                     </div>
                 </a>
             </div>
         </section>
 
     </main>
-    
+
     <footer>
         <p>&copy; 2026 Aristeidis Tsaknis - All Rights Reserved.</p>
     </footer>
 
-    <audio id="car-unlock-sound" src="unlock.mp3" preload="auto"></audio>
-    
-    <script src="script.js"></script>
+    <template id="profile-template">
+        <div class="resume-wrapper">
 
-    <div id="resume-content-source" style="display: none;">
-        <div class="resume-wrapper" style="max-width: 100%; margin: 0 auto; text-align: left;">
-            
-            <div class="resume-header" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem; margin-bottom: 4rem; border-bottom: 1px solid var(--border-color); padding-bottom: 4rem;">
-                <div class="profile-img" style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent); flex-shrink: 0; margin: 0 auto;">
-                    <img src="profile.jpg" alt="Aristeidis Tsaknis" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="resume-header">
+                <div class="profile-img">
+                    <img src="images/profile.jpg" alt="Aristeidis Tsaknis" width="320" height="480" decoding="async">
                 </div>
-                <div style="flex: 1; min-width: 300px;">
-                    <h2 style="font-size: 3rem; letter-spacing: -1px; margin-bottom: 0.5rem;">Aristeidis Tsaknis</h2>
-                    <p style="font-family: monospace; color: var(--accent); margin-bottom: 1.5rem; font-size: 1.1rem;">Data & AI Engineer | System Builder | Continuous Learner</p>
-                    <p style="color: var(--secondary-text); font-size: 1.2rem; line-height: 1.7; max-width: 1000px;">
+                <div class="profile-summary">
+                    <h2 id="profile-title">Aristeidis Tsaknis</h2>
+                    <p class="profile-role">Data & AI Engineer | System Builder | Continuous Learner</p>
+                    <p class="profile-bio">
                         I am a Data & AI Engineer who specializes in bridging the gap between raw data and actionable intelligence. As a top-ranked Integrated Master’s graduate in Electrical & Computer Engineering, my expertise spans the entire data lifecycle.<br><br>
                         From writing embedded C++ for IoT sensors, to architecting cloud-driven ETL pipelines, and publishing research on ML-based autism diagnostics, I thrive on complex problems. I am passionate about building robust, scalable data infrastructures that allow advanced analytics to thrive in real-world production environments.
                     </p>
                 </div>
             </div>
 
-            <h3 style="font-family: monospace; color: var(--secondary-text); margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;">Beyond The Code</h3>
-                        
-            <div class="resume-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
-                
-                <div class="resume-card" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: flex-start;">
-                    <strong style="display: block; margin-bottom: 0.75rem; color: var(--text-color); font-size: 1.3rem; font-family: monospace;">01 / THE OPERATING SYSTEM</strong>
-                    <p style="color: var(--secondary-text); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">The core principles that govern my work ethic and engineering approach.</p>
+            <h3 class="profile-kicker">Beyond The Code</h3>
+
+            <div class="resume-grid">
+
+                <div class="resume-card">
+                    <h4>01 / THE OPERATING SYSTEM</h4>
+                    <p>The core principles that govern my work ethic and engineering approach.</p>
                     <div class="bg-details">
                         <ul>
-                            <li><strong style="color: var(--text-color);">Adaptability Over Ego:</strong> Technologies change, but the ability to pivot is permanent. I leave my ego at the door to solve hard problems.</li>
-                            <li><strong style="color: var(--text-color);">Bias For Action:</strong> "Done" is better than perfect, and starting is better than waiting for the right moment. Iteration beats stagnation.</li>
-                            <li><strong style="color: var(--text-color);">Consistency > Talent:</strong> I rely on structured, relentless hard work over fleeting bursts of motivation.</li>
+                            <li><strong>Adaptability Over Ego:</strong> Technologies change, but the ability to pivot is permanent. I leave my ego at the door to solve hard problems.</li>
+                            <li><strong>Bias For Action:</strong> "Done" is better than perfect, and starting is better than waiting for the right moment. Iteration beats stagnation.</li>
+                            <li><strong>Consistency > Talent:</strong> I rely on structured, relentless hard work over fleeting bursts of motivation.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="resume-card" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: flex-start;">
-                    <strong style="display: block; margin-bottom: 0.75rem; color: var(--text-color); font-size: 1.3rem; font-family: monospace;">02 / THE PHYSICAL DRIVE</strong>
-                    <p style="color: var(--secondary-text); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">Engineering requires hours at a desk. I counterbalance it with physical discipline (and a bit of fun).</p>
+                <div class="resume-card">
+                    <h4>02 / THE PHYSICAL DRIVE</h4>
+                    <p>Engineering requires hours at a desk. I counterbalance it with physical discipline (and a bit of fun).</p>
                     <div class="bg-details">
                         <ul>
-                            <li><strong style="color: var(--text-color);">Calisthenics & Gym:</strong> My favorite way to blow off steam and reset my screen-fatigued brain. I train heavily in bodyweight control, which basically just means I like to occasionally walk upside down on my hands.</li>
-                            <li><strong style="color: var(--text-color);">Team Sports:</strong> I played competitive football until 2021. There’s just something great about working with a team to communicate, adapt, and get the win. These days, you’ll still find me chasing that same feeling every weekend in a local 5v5 league with friends.</li>
-                            <li><strong style="color: var(--text-color);">Table Tennis:</strong> I have a strict "must have a ping-pong table" office policy. It's one of my favorite ways to step away from the IDE, laugh, and reset my brain.</li>
+                            <li><strong>Calisthenics & Gym:</strong> My favorite way to blow off steam and reset my screen-fatigued brain. I train heavily in bodyweight control, which basically just means I like to occasionally walk upside down on my hands.</li>
+                            <li><strong>Team Sports:</strong> I played competitive football until 2021. There’s just something great about working with a team to communicate, adapt, and get the win. These days, you’ll still find me chasing that same feeling every weekend in a local 5v5 league with friends.</li>
+                            <li><strong>Table Tennis:</strong> I have a strict "must have a ping-pong table" office policy. It's one of my favorite ways to step away from the IDE, laugh, and reset my brain.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="resume-card" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: flex-start;">
-                    <strong style="display: block; margin-bottom: 0.75rem; color: var(--text-color); font-size: 1.3rem; font-family: monospace;">03 / THE INTELLECTUAL DIET</strong>
-                    <p style="color: var(--secondary-text); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">How I feed my curiosity when I'm away from the screen.</p>
+                <div class="resume-card">
+                    <h4>03 / THE INTELLECTUAL DIET</h4>
+                    <p>How I feed my curiosity when I'm away from the screen.</p>
                     <div class="bg-details">
                         <ul>
-                            <li><strong style="color: var(--text-color);">Philosophy & Psychology:</strong> Deep dives into human nature and self-improvement, heavily influenced by Nietzsche and Dostoevsky.</li>
-                            <li><strong style="color: var(--text-color);">World Building:</strong> A massive fan of immersive fantasy literature, specifically J.R.R. Tolkien and Harry Potter.</li>
-                            <li><strong style="color: var(--text-color);">Finance & Markets:</strong> I casually nerd out over investing and growth stocks. To me, the market is just a massive, chaotic data puzzle that is genuinely fun to try and decode.</li>
+                            <li><strong>Philosophy & Psychology:</strong> Deep dives into human nature and self-improvement, heavily influenced by Nietzsche and Dostoevsky.</li>
+                            <li><strong>World Building:</strong> A massive fan of immersive fantasy literature, specifically J.R.R. Tolkien and Harry Potter.</li>
+                            <li><strong>Finance & Markets:</strong> I casually nerd out over investing and growth stocks. To me, the market is just a massive, chaotic data puzzle that is genuinely fun to try and decode.</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div style="margin-top: 5rem; margin-bottom: 3rem; text-align: center;">
-                <p style="color: var(--secondary-text); font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">FORMAL DETAILS:</p>
-                <a href="AristeidisTsaknis-DE.pdf" download class="action-btn download-btn" style="--card-accent: var(--text-color); border: 1px solid var(--text-color); padding: 16px 32px; font-size: 1rem; text-decoration: none; color: var(--text-color); transition: all 0.3s; display: inline-block;">
+            <div class="profile-footer">
+                <p>FORMAL DETAILS:</p>
+                <a href="AristeidisTsaknis-DE.pdf" download class="action-btn download-btn">
                     DOWNLOAD TRADITIONAL RESUME
                 </a>
             </div>
 
         </div>
-    </div>
+    </template>
 
 </body>
 </html>
